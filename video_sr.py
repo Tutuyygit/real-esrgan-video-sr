@@ -5,7 +5,7 @@ import time
 import os
 
 # === 1. 加载模型 ===
-session = onnxruntime.InferenceSession("Real-ESRGAN-General-x4v3.onnx", providers=["CPUExecutionProvider"])
+session = onnxruntime.InferenceSession("Real-ESRGAN-General-x4v3.onnx", providers=["CUDAExecutionProvider", "CPUExecutionProvider"])
 input_name = session.get_inputs()[0].name
 
 # === 2. 打开视频文件 ===
